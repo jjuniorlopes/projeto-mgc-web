@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadeia de Valor - Consórcios Multifinalitários</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #2857ad 0%, #154194 100%);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 50px 20px;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+        }
+        .page-header h1 {
+            font-weight: 700;
+            font-size: 2.8rem;
+            margin: 0;
+        }
+        .page-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 0.5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: #111827;
+            padding-bottom: 0.5rem;
+            border-bottom: 4px solid #3b82f6;
+            display: inline-block;
+        }
+        .value-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.2s ease-in-out;
+            border-left-width: 4px;
+        }
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .card-icon {
+            flex-shrink: 0;
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+        .card-text {
+            font-weight: 500;
+            color: #374151;
+            text-align: left;
+        }
+
+        .modal-overlay { display: none; position: fixed; inset: 0; background-color: rgba(0, 0, 0, 0.6); backdrop-filter: blur(5px); z-index: 50; justify-content: center; align-items: center; }
+        .modal-container { background-color: white; padding: 2rem; border-radius: 1rem; width: 90%; max-width: 800px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); position: relative; }
+        .modal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e5e7eb; padding-bottom: 1rem; }
+        .modal-title { font-size: 1.5rem; font-weight: 700; color: #1b62b8; }
+        .close-btn { font-size: 2rem; font-weight: bold; color: #9ca3af; cursor: pointer; transition: color 0.2s; }
+        .close-btn:hover { color: #1f2937; }
+        .modal-body { margin-top: 1.5rem; }
+        .modal-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+        .modal-table th, .modal-table td { border: 1px solid #e5e7eb; padding: 0.75rem; text-align: left; }
+        .modal-table th { background-color: #f3f4f6; font-weight: 600; }
+        .modal-table td li { list-style-position: inside; }
+
+        /* --- ESTILOS DO RODAPÉ --- */
+        footer {
+            text-align: center;
+            padding: 2.5rem 0;
+            margin-top: 20px;
+            border-top: 1px solid #e5e7eb;
+        }
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.75rem;
+        }
+        .footer-logo {
+            height: 45px;
+            width: auto;
+        }
+        .footer-content p {
+            font-size: 0.9rem;
+            color: #4b5563;
+            max-width: 450px;
+        }
+        .footer-version {
+            font-size: 0.85rem;
+            color: #9ca3af;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <div class="max-w-7xl mx-auto">
+        <header class="page-header">
+            <h1>Cadeia de Valor dos Consórcios Multifinalitários</h1>
+            <p>Entenda a estrutura de nossos processos e serviços.</p>
+        </header>
+
+        <main class="space-y-16">
+            <section>
+                <div class="text-center">
+                    <h2 class="section-title">Atividades de Suporte</h2>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-8">
+                    <div class="value-card border-l-red-500"><div class="card-icon text-red-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" /></svg></div><p class="card-text">Planejamento e Gestão Orçamentária</p></div>
+                    <div class="value-card border-l-red-500"><div class="card-icon text-red-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0l15.482 0" /></svg></div><p class="card-text">Capacitação Técnica e Gerencial</p></div>
+                    <div class="value-card border-l-red-500"><div class="card-icon text-red-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M17.834 14.834l-1.591-1.591M12 18.75V21.75M6.166 14.834l1.591-1.591M3.75 10.5H6m2.166-5.834l1.591 1.591" /></svg></div><p class="card-text">Auditoria e Controle Interno</p></div>
+                    <div class="value-card border-l-red-500"><div class="card-icon text-red-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" /></svg></div><p class="card-text">Captação de Recursos</p></div>
+                    <div class="value-card border-l-red-500"><div class="card-icon text-red-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg></div><p class="card-text">Suporte Jurídico</p></div>
+                    <div class="value-card border-l-red-500"><div class="card-icon text-red-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-4.67c.625.93.998 2.023.998 3.172v.003z" /></svg></div><p class="card-text">Administração de Pessoal</p></div>
+                    <div class="value-card border-l-red-500"><div class="card-icon text-red-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 21.75z" /></svg></div><p class="card-text">Gestão Contábil-Financeira</p></div>
+                    <div class="value-card border-l-red-500"><div class="card-icon text-red-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.73-.726 1.196-1.02a9.738 9.738 0 00-3.35-2.334L8.25 8.25m-3.357 2.496c-.384.317-.726.73-1.02 1.196a9.738 9.738 0 00-2.334 3.35L1.254 18l2.496-3.030m6.41-1.378c.388-.082.78-.146 1.183-.196" /></svg></div><p class="card-text">Manutenção eletromecânica</p></div>
+                    <div class="value-card border-l-red-500"><div class="card-icon text-red-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" /></svg></div><p class="card-text">Gestão de tecnologia da informação</p></div>
+                    <div class="value-card border-l-red-500"><div class="card-icon text-red-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg></div><p class="card-text">Gestão de contratos e convênios</p></div>
+                    <div class="value-card border-l-red-500"><div class="card-icon text-red-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c.51 0 .962-.328 1.095-.824l1.823-6.879a.75.75 0 00-.546-.922L5.49 4.887M7.5 14.25L5.106 5.162M18 10.5h.008v.008H18V10.5z" /></svg></div><p class="card-text">Aquisição de bens e serviços</p></div>
+                    <div class="value-card border-l-red-500"><div class="card-icon text-red-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 7.5l-.625 10.632a2.25 2.25 0 01-2.247 2.118H6.622a2.25 2.25 0 01-2.247-2.118L3.75 7.5M10.5 11.25h3M12 15h.008" /></svg></div><p class="card-text">Gestão patrimonial</p></div>
+                    <div class="value-card border-l-red-500"><div class="card-icon text-red-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v.958m12 0c-2.278 0-4.073.86-5.25 2.118" /></svg></div><p class="card-text">Gestão da frota de veículos</p></div>
+                    <div class="value-card border-l-red-500"><div class="card-icon text-red-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" /></svg></div><p class="card-text">Comunicação social</p></div>
+                </div>
+            </section>
+
+            <section>
+                <div class="text-center">
+                    <h2 class="section-title">Atividades Primárias</h2>
+                </div>
+                <div class="flex justify-center items-center gap-2 text-gray-600 -mt-4 mb-8">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672L13.684 16.6m0 0l-2.51 2.225.569-9.47 5.227 7.917-3.286-.672zM12 2.25V4.5m5.834.166l-1.591 1.591M20.25 10.5H18M17.834 14.834l-1.591-1.591M12 18.75V21.75M6.166 14.834l1.591-1.591M3.75 10.5H6m2.166-5.834l1.591 1.591" />
+                    </svg>
+                    <p class="text-base">Clique em uma atividade para ver mais detalhes.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mt-8">
+                    <div class="value-card border-l-blue-500 atividade-card" data-atividade="requalificacao"><div class="card-icon text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" /></svg></div><p class="card-text">Requalificação de Vias</p></div>
+                    <div class="value-card border-l-blue-500 atividade-card" data-atividade="manutencao"><div class="card-icon text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.625a2.25 2.25 0 01-2.36 0l-7.5-4.625A2.25 2.25 0 012.25 6.993V6.75" /></svg></div><p class="card-text">Manutenção de Vias</p></div>
+                    <div class="value-card border-l-blue-500 atividade-card" data-atividade="fortalecimento"><div class="card-icon text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 21v-7.5A2.25 2.25 0 0011.25 11.25H4.5A2.25 2.25 0 002.25 13.5V21M6 4.5l4.5 4.5M6 4.5l-4.5 4.5M12 4.5l4.5 4.5M12 4.5l-4.5 4.5" /></svg></div><p class="card-text">Fortalecimento de Cadeias Produtivas Rurais</p></div>
+                    <div class="value-card border-l-blue-500 atividade-card" data-atividade="hidrica"><div class="card-icon text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" /></svg></div><p class="card-text">Ampliação da Oferta Hídrica</p></div>
+                    <div class="value-card border-l-blue-500 atividade-card" data-atividade="qualificacao"><div class="card-icon text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div><p class="card-text">Qualificação de Produtos de Origem Animal e Vegetal</p></div>
+                    <div class="value-card border-l-blue-500 atividade-card" data-atividade="fundiaria"><div class="card-icon text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 01-1.125-1.125M3.375 19.5h7.5M14.25 19.5h6.375M10.5 6.375l-1.875-1.875a1.125 1.125 0 00-1.591 0L3.375 8.25m0 0a1.125 1.125 0 000 1.591l3.75 3.75m0-5.342L12 1.5l2.25 2.25m-4.5 7.5L12 12m2.25 2.25l3.75 3.75M12 12l-3.75 3.75" /></svg></div><p class="card-text">Suporte Técnico à Regularização Fundiária</p></div>
+                    <div class="value-card border-l-blue-500 atividade-card" data-atividade="ambiental"><div class="card-icon text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 21l5.25-11.625M21 21l-5.25-11.625M3.75 5.25h16.5M4.5 10.5h15M5.25 15h13.5" /></svg></div><p class="card-text">Suporte Técnico à Gestão Ambiental Municipal</p></div>
+                    <div class="value-card border-l-blue-500 atividade-card" data-atividade="infraestrutura"><div class="card-icon text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" /></svg></div><p class="card-text">Execução de Obras de Infraestrutura Urbana e Edificações Públicas</p></div>
+                    <div class="value-card border-l-blue-500 atividade-card" data-atividade="educacao"><div class="card-icon text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path d="M12 14l9-5-9-5-9 5 9 5z" /><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" /></svg></div><p class="card-text">Fortalecimento das Políticas de Educação, Cultura, Esporte e Turismo</p></div>
+                    <div class="value-card border-l-blue-500 atividade-card" data-atividade="maquinas"><div class="card-icon text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25a2.25 2.25 0 00-2.25 2.25v10.5a2.25 2.25 0 002.25 2.25H9.375" /></svg></div><p class="card-text">Disponibilização de Máquinas e Equipamentos</p></div>
+                    <div class="value-card border-l-blue-500 atividade-card" data-atividade="habitacao"><div class="card-icon text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-18 9" /></svg></div><p class="card-text">Execução de Obras de Habitação</p></div>
+                    <div class="value-card border-l-blue-500 atividade-card" data-atividade="residuos"><div class="card-icon text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" /></svg></div><p class="card-text">Gestão de Resíduos Sólidos</p></div>
+                    <div class="value-card border-l-blue-500 atividade-card" data-atividade="planos"><div class="card-icon text-blue-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.125 2.25h-4.5c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125v-9M10.125 2.25h.375a9 9 0 019 9v.375M10.125 2.25A3.375 3.375 0 0113.5 5.625v1.5c0 .621.504 1.125 1.125 1.125h1.5a3.375 3.375 0 013.375 3.375M9 15l2.25 2.25L15 12" /></svg></div><p class="card-text">Elaboração de Planos e Projetos</p></div>
+                </div>
+            </section>
+
+            <section>
+                <div class="text-center">
+                    <h2 class="section-title">Interessados</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                    <div class="value-card border-l-purple-500"><div class="card-icon text-purple-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m-1.5-13.5h3" /></svg></div><p class="card-text">Municípios Consorciados</p></div>
+                    <div class="value-card border-l-purple-500"><div class="card-icon text-purple-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m-7.5-2.962c.57-1.023-.194-1.37-1-1.37c-.374 0-.746.064-1.087.186m-1.5-1.5a.25.25 0 00.194.482c.15.02.296.02.446.02.213 0 .421-.016.626-.048a3.75 3.75 0 013.75-3.75c1.023 0 1.933.344 2.625.923" /></svg></div><p class="card-text">Sociedade</p></div>
+                    <div class="value-card border-l-purple-500"><div class="card-icon text-purple-500"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18" /></svg></div><p class="card-text">Governo do Estado</p></div>
+                </div>
+            </section>
+        </main>
+        
+        <div class="text-center p-8">
+            <a href="../index.html" class="text-blue-600 hover:text-blue-800 font-semibold transition">&larr; Voltar para a Página Principal</a>
+        </div>
+        
+        <footer>
+            <div class="footer-content">
+                <img src="../imagens/logo_governo.PNG" alt="Logo Governo do Estado da Bahia" class="footer-logo">
+                <p>&copy; 2025 Coordenação dos Consórcios Públicos do Estado da Bahia. Todos os direitos reservados.</p>
+            </div>
+            <p class="footer-version">Versão: 1.0</p>
+        </footer>
+    </div>
+
+    <div id="atividade-modal" class="modal-overlay">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h3 id="modal-title" class="modal-title"></h3>
+                <span class="close-btn">&times;</span>
+            </div>
+            <div id="modal-body" class="modal-body">
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/cadeia_script.js"></script>
+</body>
+</html>

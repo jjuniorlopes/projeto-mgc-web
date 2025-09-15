@@ -31,6 +31,16 @@ body {
     margin: 0 auto;
 }
 
+.container-margin {
+  width: 500px;        /* Defina uma largura */
+  margin: 0 auto;      /* Centraliza horizontalmente */
+  text-align: center;  /* Opcional: centraliza o texto dentro do container */
+}
+
+.text-base {
+  padding: 10px;
+}
+
 /* Header Styles */
 header {
     background: #ffffff; /* Alterado para branco sólido */

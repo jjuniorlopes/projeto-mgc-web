@@ -180,7 +180,7 @@ h3 {
 
 p {
     font-size: 1.1rem;
-    text-align: justify;
+    text-align: left; // center, justify ou left
     margin-bottom: 15px;
     line-height: 1.8;
 }

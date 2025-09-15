@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciativas Estratégicas - FECBAHA</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4A90E2;
+            --secondary-color: #F8F9FA;
+            --accent-color: #FF5733;
+            --text-color: #2C3E50;
+            --light-text-color: #FFFFFF;
+            --box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #4A90E2, #7B68EE);
+            color: var(--light-text-color);
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+        }
+
+        header h1 {
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--box-shadow);
+            margin-bottom: 30px;
+        }
+
+        .iniciativas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .iniciativa-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--accent-color);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .iniciativa-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(74, 144, 226, 0.1) 50%, transparent 70%);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .iniciativa-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .iniciativa-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            border-left-width: 8px;
+        }
+
+        .iniciativa-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .iniciativa-card p {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .detalhes-list {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .detalhes-list li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 25px;
+            color: #555;
+        }
+
+        .detalhes-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: bold;
+            padding: 12px 25px;
+            border-radius: 25px;
+            background: rgba(74, 144, 226, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: var(--primary-color);
+            color: var(--light-text-color);
+            transform: translateY(-2px);
+        }
+
+        .categoria {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--light-text-color);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .categoria.infraestrutura {
+            background: #28a745;
+        }
+
+        .categoria.desenvolvimento {
+            background: #17a2b8;
+        }
+
+        .categoria.gestao {
+            background: #6f42c1;
+        }
+
+        @media (max-width: 768px) {
+            .iniciativas-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Iniciativas Estratégicas</h1>
+            <p>Ações concretas para implementar o Planejamento Estratégico</p>
+        </header>
+
+        <main>
+            <section class="section">
+                <h2 style="text-align: center; color: var(--primary-color); margin-bottom: 20px;">Principais Iniciativas dos Consórcios Multifinalitários</h2>
+                <p style="text-align: center; font-size: 1.1rem; color: #666; margin-bottom: 30px;">
+                    As iniciativas estratégicas representam ações concretas e estruturadas para alcançar os objetivos estabelecidos no planejamento estratégico, promovendo o desenvolvimento territorial sustentável e a melhoria da qualidade de vida nos municípios consorciados.
+                </p>
+
+                <div class="iniciativas-grid">
+                    <div class="iniciativa-card">
+                        <span class="categoria infraestrutura">Infraestrutura</span>
+                        <h3>Requalificação de Vias</h3>
+                        <p>Programa abrangente de melhoria da infraestrutura viária, incluindo pavimentação, sinalização e drenagem das vias urbanas e rurais dos municípios consorciados.</p>
+                        <ul class="detalhes-list">
+                            <li>Pavimentação asfáltica de vias urbanas</li>
+                            <li>Implementação de sistema de drenagem</li>
+                            <li>Sinalização horizontal e vertical</li>
+                            <li>Construção de calçadas acessíveis</li>
+                        </ul>
+                    </div>
+
+                    <div class="iniciativa-card">
+                        <span class="categoria infraestrutura">Infraestrutura</span>
+                        <h3>Manutenção de Vias</h3>
+                        <p>Serviços contínuos de conservação e manutenção das vias públicas para garantir sua durabilidade e segurança para os usuários.</p>
+                        <ul class="detalhes-list">
+                            <li>Tapa-buracos e remendos</li>
+                            <li>Limpeza de bueiros e galerias</li>
+                            <li>Manutenção da sinalização</li>
+                            <li>Roçagem de canteiros centrais</li>
+                        </ul>
+                    </div>
+
+                    <div class="iniciativa-card">
+                        <span class="categoria desenvolvimento">Desenvolvimento Rural</span>
+                        <h3>Fortalecimento de Cadeias Produtivas Rurais</h3>
+                        <p>Apoio técnico e financeiro para o desenvolvimento e fortalecimento das cadeias produtivas do setor agropecuário regional.</p>
+                        <ul class="detalhes-list">
+                            <li>Assistência técnica rural especializada</li>
+                            <li>Capacitação de produtores rurais</li>
+                            <li>Apoio à comercialização de produtos</li>
+                            <li>Desenvolvimento de cooperativas</li>
+                        </ul>
+                    </div>
+
+                    <div class="iniciativa-card">
+                        <span class="categoria infraestrutura">Recursos Hídricos</span>
+                        <h3>Implantação de Estruturas para Ampliação da Oferta Hídrica</h3>
+                        <p>Construção e melhoria de infraestruturas hídricas para garantir o acesso à água de qualidade para a população e atividades produtivas.</p>
+                        <ul class="detalhes-list">
+                            <li>Perfuração de poços artesianos</li>
+                            <li>Construção de cisternas</li>
+                            <li>Sistemas de abastecimento</li>
+                            <li>Tratamento de água</li>
+                        </ul>
+                    </div>
+
+                    <div class="iniciativa-card">
+                        <span class="categoria desenvolvimento">Qualidade</span>
+                        <h3>Qualificação de Produtos de Origem Animal e Vegetal</h3>
+                        <p>Programas de melhoria da qualidade e certificação de produtos de origem animal e vegetal produzidos na região.</p>
+                        <ul class="detalhes-list">
+                            <li>Certificação sanitária</li>
+                            <li>Controle de qualidade</li>
+                            <li>Rastreabilidade de produtos</li>
+                            <li>Adequação às normas técnicas</li>
+                        </ul>
+                    </div>
+
+                    <div class="iniciativa-card">
+                        <span class="categoria gestao">Regularização</span>
+                        <h3>Suporte Técnico à Regularização Fundiária</h3>
+                        <p>Suporte técnico e jurídico para a regularização de propriedades rurais e urbanas, garantindo segurança jurídica aos proprietários.</p>
+                        <ul class="detalhes-list">
+                            <li>Levantamento topográfico</li>
+                            <li>Documentação legal</li>
+                            <li>Georreferenciamento</li>
+                            <li>Registro de imóveis</li>
+                        </ul>
+                    </div>
+
+                    <div class="iniciativa-card">
+                        <span class="categoria gestao">Meio Ambiente</span>
+                        <h3>Suporte Técnico à Gestão Ambiental Municipal</h3>
+                        <p>Apoio técnico especializado para fortalecer a gestão ambiental nos municípios consorciados, promovendo sustentabilidade.</p>
+                        <ul class="detalhes-list">
+                            <li>Elaboração de planos ambientais</li>
+                            <li>Licenciamento ambiental</li>
+                            <li>Educação ambiental</li>
+                            <li>Monitoramento de recursos naturais</li>
+                        </ul>
+                    </div>
+
+                    <div class="iniciativa-card">
+                        <span class="categoria infraestrutura">Obras Públicas</span>
+                        <h3>Execução de Obras de Infraestrutura Urbana e Edificações Públicas</h3>
+                        <p>Construção e reforma de equipamentos públicos essenciais para o funcionamento adequado dos serviços municipais.</p>
+                        <ul class="detalhes-list">
+                            <li>Construção de escolas e postos de saúde</li>
+                            <li>Praças e espaços públicos</li>
+                            <li>Mercados municipais</li>
+                            <li>Centros administrativos</li>
+                        </ul>
+                    </div>
+
+                    <div class="iniciativa-card">
+                        <span class="categoria desenvolvimento">Políticas Sociais</span>
+                        <h3>Fortalecimento das Políticas de Educação, Cultura, Esporte e Turismo</h3>
+                        <p>Desenvolvimento de programas integrados para fortalecer as políticas sociais e culturais nos municípios consorciados.</p>
+                        <ul class="detalhes-list">
+                            <li>Programas educacionais complementares</li>
+                            <li>Eventos culturais regionais</li>
+                            <li>Infraestrutura esportiva</li>
+                            <li>Roteiros turísticos integrados</li>
+                        </ul>
+                    </div>
+
+                    <div class="iniciativa-card">
+                        <span class="categoria infraestrutura">Equipamentos</span>
+                        <h3>Disponibilização de Máquinas e Equipamentos</h3>
+                        <p>Compartilhamento de máquinas e equipamentos especializados entre os municípios consorciados para otimizar recursos.</p>
+                        <ul class="detalhes-list">
+                            <li>Máquinas para obras públicas</li>
+                            <li>Equipamentos agrícolas</li>
+                            <li>Veículos especializados</li>
+                            <li>Sistema de agendamento compartilhado</li>
+                        </ul>
+                    </div>
+
+                    <div class="iniciativa-card">
+                        <span class="categoria infraestrutura">Habitação</span>
+                        <h3>Execução de Obras de Habitação</h3>
+                        <p>Programas habitacionais para atender às necessidades de moradia digna da população dos municípios consorciados.</p>
+                        <ul class="detalhes-list">
+                            <li>Construção de unidades habitacionais</li>
+                            <li>Reforma de moradias existentes</li>
+                            <li>Infraestrutura urbana integrada</li>
+                            <li>Regularização de loteamentos</li>
+                        </ul>
+                    </div>
+
+                    <div class="iniciativa-card">
+                        <span class="categoria gestao">Meio Ambiente</span>
+                        <h3>Gestão de Resíduos Sólidos</h3>
+                        <p>Implementação de sistemas integrados de gestão de resíduos sólidos para promover sustentabilidade ambiental.</p>
+                        <ul class="detalhes-list">
+                            <li>Coleta seletiva regionalizada</li>
+                            <li>Aterros sanitários compartilhados</li>
+                            <li>Programas de reciclagem</li>
+                            <li>Educação ambiental</li>
+                        </ul>
+                    </div>
+
+                    <div class="iniciativa-card">
+                        <span class="categoria gestao">Planejamento</span>
+                        <h3>Elaboração de Planos e Projetos</h3>
+                        <p>Desenvolvimento de planos estratégicos e projetos técnicos para orientar o desenvolvimento territorial sustentável.</p>
+                        <ul class="detalhes-list">
+                            <li>Planos diretores municipais</li>
+                            <li>Projetos de captação de recursos</li>
+                            <li>Estudos de viabilidade</li>
+                            <li>Planos setoriais integrados</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 40px;">
+                    <a href="../index.html" class="back-link">&larr; Voltar para a Página Principal</a>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
+

@@ -1,222 +1,242 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planejamento Estratégico de Referência - Consórcios Multifinalitários</title>
+    <link rel="icon" type="image/png" href="imagens/icon_ba.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-    <div class="container">
+    <div class="bg-shape shape-1" aria-hidden="true"></div>
+    <div class="bg-shape shape-2" aria-hidden="true"></div>
+
+    <div class="container relative-z">
+        <nav class="navigation glass-effect" id="menu-principal" tabindex="-1" aria-label="Menu de Navegação Principal">
+            <div class="logos-container">
+                <a href="https://www.fecbahia.org.br/" target="_blank" class="logo" title="Ir para o site da FECBAHIA">
+                    <img src="imagens/fecbahia.png" alt="Logo da Federação dos Consórcios Públicos da Bahia" class="nav-logo">
+                </a>
+                
+                <span class="logo-divider" aria-hidden="true"></span> 
+                
+                <a href="https://www.ba.gov.br/" target="_blank" class="logo" title="Ir para o portal ba.gov.br">
+                    <img src="imagens/ba-gov-br.png" alt="Portal ba.gov.br" class="nav-logo-gov">
+                </a>
+            </div>
+            
+            <ul>
+                <li><a href="#alinhamento" class="nav-link">Alinhamento</a></li>
+                <li><a href="#missao-visao" class="nav-link">Identidade</a></li>
+                <li><a href="#mapa-estrategico" class="nav-link">Mapa Estratégico</a></li>
+                <li><a href="#cadeia-valor" class="nav-link">Cadeia de Valor</a></li>
+                <li><a href="#indicadores" class="nav-link">Indicadores</a></li>
+            </ul>
+        </nav>  
         
-	<nav class="navigation">
-		
-	   <a href="https://www.ba.gov.br/" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <img src="imagens/ba-gov-br.png" alt="Logo Governo do Estado da Bahia" class="nav-logo">
-       </a>
+        <div class="toolbar-section" aria-label="Barra de Ferramentas e Acessibilidade">
+            <div class="search-container">
+                <svg class="search-icon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                <input type="text" id="searchInput" placeholder="Busque por serviços ou palavra-chave..." aria-label="Campo de busca do site">
+            </div>
 
-		<ul>
-			<li><a href="#alinhamento" class="nav-link">Alinhamento</a></li>
-			<li><a href="#missao-visao" class="nav-link">Missão & Visão</a></li>
-			<li><a href="#visao-2028" class="nav-link">Pilares</a></li>
-			<li><a href="#cadeia-valor" class="nav-link">Cadeia de Valor</a></li>
-			<li><a href="#indicadores" class="nav-link">Indicadores</a></li>
-			<li><a href="#iniciativas" class="nav-link">Iniciativas</a></li>
-		</ul>
-	</nav>	
-		<header class="main-banner">
-			<img src="imagens/banner-principal.png" alt="Planejamento Estratégico de Referência" class="banner-image">
-		</header>
+            <div class="accessibility-container" aria-label="Controles de Acessibilidade">
+                <button id="btn-font-increase" class="access-btn" title="Aumentar texto (A+)" aria-label="Aumentar tamanho do texto">A+</button>
+                <button id="btn-font-normal" class="access-btn" title="Tamanho normal do texto (A)" aria-label="Restaurar tamanho do texto">A</button>
+                <button id="btn-font-decrease" class="access-btn" title="Diminuir texto (A-)" aria-label="Diminuir tamanho do texto">A-</button>
+                <button id="btn-contrast" class="access-btn" title="Alto Contraste (Alt+6)" aria-label="Alternar modo de alto contraste">
+                    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18v-8-8a8 8 0 1 1 0 16z"/></svg>
+                </button>
+            </div>
 
-        <main>
-            <section id="alinhamento" class="section">
-                <h2>Alinhamento Conceitual e Premissas</h2>
-                <div class="content-grid">
-                    <div class="text-content">
-                        <p>O Planejamento Estratégico tem como objetivo reposicionar organizações em suas áreas de atuação, com um foco estruturante. O Planejamento Estratégico para os consórcios multifinalitários foi elaborado de forma similar ao de grupos empresariais, com foco em questões de interesse comum.</p>
-                        <p>É fundamental que todas as ações estruturantes na gestão dos consórcios estejam alinhadas a este Planejamento Estratégico, pois ele deve ser o elemento central do Modelo de Gestão de Consórcios (MGC).</p>
+            <div class="social-share-container" aria-label="Opções de compartilhamento e redes sociais">
+                <button class="share-btn" data-share="instagram" title="Acessar nosso Instagram" aria-label="Acessar nosso Instagram">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm4.098-9.083a1.44 1.44 0 1 0 0-2.88 1.44 1.44 0 0 0 0 2.88z"/></svg>
+                </button>
+                <button class="share-btn" data-share="whatsapp" title="Compartilhar no WhatsApp" aria-label="Compartilhar no WhatsApp">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a12.8 12.8 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                </button>
+                <button class="share-btn" data-share="email" title="Enviar por E-mail" aria-label="Enviar por E-mail">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                </button>
+                <button class="share-btn" data-share="print" title="Imprimir Página" aria-label="Imprimir Página">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/></svg>
+                </button>
+                <button class="share-btn" data-share="copy" title="Copiar Link" id="btn-copy-link" aria-label="Copiar Link da Página">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"></path></svg>
+                </button>
+            </div>
+        </div>
+        
+        <header class="main-banner glass-effect">
+            <img src="imagens/banner-principal.jpg" alt="Banner Planejamento Estratégico de Referência" class="banner-image">
+        </header>
+
+        <main id="conteudo-principal" tabindex="-1">
+            <section id="alinhamento" class="section section-clean">
+                <h2 class="title-alinhamento">Planejamento Estratégico de Referência</h2>
+                <hr class="divider-orange">
+                
+                <div class="align-grid">
+                    <div class="text-content-clean">
+                        <p class="lead-text">O <strong>Planejamento Estratégico</strong> funciona como a bússola para reposicionar os consórcios públicos mutifinalitários em suas áreas de atuação e guiá-los na busca pelo desenvolvimento da governança e da sustentabilidade socioambiental e econômico-financeira.</p>
+                        <p>Considerando que os consórcios públicos mutifinalitários atuam em bases muito similares, o presente planejamento foi elaborado com a participação efetivas dos referidos consórcios e configurado a partir das questões estratégicas comuns a todos eles.</p>
+                        <div class="highlight-quote">
+                            <p>Este instrumento servirá de elemento referencial para as ações a serem adotadas no nível estratégico, tático e operacional de cada consórcio.</p>
+                        </div>
                     </div>
-                    <div class="highlight-box">
-                        <h3>Características Principais</h3>
-                        <ul>
-                            <li>Viés de reposicionamento estruturante</li>
-                            <li>Foco em questões de interesse comum</li>
-                            <li>Elemento central do MGC</li>
+                    
+                    <div class="solid-blue-box">
+                        <h3>Premissas<br>Utilizadas</h3>
+                        <ul class="check-list">
+                            <li><span class="check-icon" aria-hidden="true">✓</span> <span>Fortalecimento institucional dos consórcios.</span></li>
+                            <li><span class="check-icon" aria-hidden="true">✓</span> <span>Foco em resultados para os consorciados, munícipes e Estado.</span></li>
+                            <li><span class="check-icon" aria-hidden="true">✓</span> <span>Planejamento estratégico como referencial para o planejamento e gestão dos consórcios.</span></li>
                         </ul>
                     </div>
                 </div>
             </section>
 
-            <section id="missao-visao" class="section">
-                <h2>Missão, Visão e Valores</h2>
-                <div class="card-group">
-                    <div class="card-missao card interactive-card">
-                        <h3>Missão</h3>
-                        <p>Contribuir para o desenvolvimento territorial sustentável e a melhoria da qualidade de vida nos municípios consorciados, através da execução de políticas públicas com excelência.</p>
+            <section id="missao-visao" class="section glass-effect">
+                <h2>Identidade Organizacional</h2>
+                <div class="mvv-modern-grid">
+                    <div class="mvv-modern-card mvv-missao mvv-trigger" data-mvv="missao" tabindex="0" role="button" aria-label="Abrir detalhes da Missão">
+                        <div class="mvv-card-body">
+                            <svg class="mvv-icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L4.5 20.29l0.71,0.71L12 18l6.79,3l0.71-0.71L12 2z"/></svg>
+                            <div class="mvv-text">Conheça o nosso propósito e razão de existir</div>
+                        </div>
+                        <div class="mvv-footer">Missão</div>
                     </div>
-                    <div class="card-visao card interactive-card">
-                        <h3>Visão</h3>
-                        <p>Tornar-se referência na execução de políticas públicas através da prestação de serviços que elevem a qualidade de vida nos municípios consorciados de forma sustentável.</p>
+                    
+                    <div class="mvv-modern-card mvv-visao mvv-trigger" data-mvv="visao" tabindex="0" role="button" aria-label="Abrir detalhes da Visão 2028">
+                        <div class="mvv-card-body">
+                            <svg class="mvv-icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                            <div class="mvv-text">Veja onde queremos chegar no futuro</div>
+                        </div>
+                        <div class="mvv-footer">Visão 2028</div>
                     </div>
-                    <div class="card-valores card interactive-card">
-                        <h3>Valores</h3>
-                        <p>Alcançaremos nossa visão partilhando <strong>CONHECIMENTO</strong> para gerar <strong>INOVAÇÃO</strong> em nossos processos, cultivando a <strong>COOPERAÇÃO</strong> e a <strong>PROATIVIDADE</strong> nas equipes, para gerarmos resultados de <strong>EXCELÊNCIA</strong> com <strong>SUSTENTABILIDADE</strong>.</p>
+
+                    <div class="mvv-modern-card mvv-valores mvv-trigger" data-mvv="valores" tabindex="0" role="button" aria-label="Abrir detalhes dos Valores">
+                        <div class="mvv-card-body">
+                            <svg class="mvv-icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                            <div class="mvv-text">Descubra os princípios que guiam nossas ações</div>
+                        </div>
+                        <div class="mvv-footer">Valores</div>
                     </div>
                 </div>
             </section>
 
-            <section id="visao-2028" class="section">
-                <h2>Pilares</h2>
-				<p class="intro-texto">A Visão 2028 é apoiada por três pilares interconectados que impulsionam o sucesso</p>
-				<div class="image-container">
-					<img src="imagens/engrenagem.PNG" alt="Visão 2028 - Diagrama Estratégico" class="interactive-image">
-				</div>
-
-				<div class="container-margin">
-  					<p class="text-base">Para explorar os detalhes dos três pilares e seus processos, clique nas caixas abaixo.</p>
-				</div>
-				
-				<div class="pilares-grid">
-					<div class="pilar alicerce">
-						<h3>Alicerce</h3>
-						<p>Adequação da estrutura organizacional</p>
-					<div class="objetivos-list">
-						<button class="objetivo-btn" data-objetivo="estrutura">Adequar a estrutura organizacional às demandas estratégicas</button>
-						<button class="objetivo-btn" data-objetivo="processos">Uniformizar e informatizar os processos de suporte e finalísticos</button>
-						<button class="objetivo-btn" data-objetivo="pessoas">Aperfeiçoar os processos de gestão de pessoas</button>
-					</div>
-				</div>
-				<div class="pilar engrenagem">
-					<h3>Engrenagem</h3>
-					<p>Otimização de processos e qualidade de serviços</p>
-					<div class="objetivos-list">
-						<button class="objetivo-btn btn-verde" data-objetivo="receitas">Otimizar a relação entre receitas e despesas correntes</button>
-						<button class="objetivo-btn btn-verde" data-objetivo="portfolio">Alinhar o portifólio de serviços às demandas dos consorciados</button>
-						<button class="objetivo-btn btn-verde" data-objetivo="qualidade">Elevar a qualidade dos serviços realizados</button>
-						<button class="objetivo-btn btn-verde" data-objetivo="produtividade">Aumentar a produtividade e eficiência dos processos</button>
-						<button class="objetivo-btn btn-verde" data-objetivo="captacao">Sistematizar a captação de recursos nacionais e internacionais</button>
-				</div>
-			</div>
-				<div class="pilar resultados">
-					<h3>Resultados</h3>
-					<p>Equilíbrio financeiro e satisfação dos consorciados</p>
-				<div class="objetivos-list">
-					<button class="objetivo-btn btn-vermelho" data-objetivo="equilibrio">Alcançar o equilíbrio econômico-financeiro</button>
-					<button class="objetivo-btn btn-vermelho" data-objetivo="necessidades">Atender às necessidades e expectativas dos consorciados</button>
-				</div>
-			</div>
-		</div>
-				
+            <section id="mapa-estrategico" class="section glass-effect">
+                <h2>Mapa Estratégico</h2>
+                <p class="intro-texto">Para explorar as perspectivas e os objetivos estratégicos, basta clicar na perspectiva e depois em cada objetivo.</p>
+                
+                <div class="mvv-modern-grid" style="margin-top: 30px;">
+                    <div class="mvv-modern-card pilares-trigger" style="border: 2px solid var(--primary-color); width: 800px; max-width: 100%;" tabindex="0" role="button" aria-label="Abrir detalhes do Mapa Estratégico">
+                        <div class="mvv-card-body" style="padding: 0;">
+                            <img src="imagens/mapa_estrategico.jpg" alt="Mapa Estratégico" style="width: 100%; height: auto; display: block; border-radius: 6px 6px 0 0; object-fit: contain;">
+                        </div>
+                        <div class="mvv-footer" style="background-color: var(--primary-color); font-size: 1.4rem; padding: 18px;">PERSPECTIVAS</div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="pdf/mapa_estrategico.pdf" download="Mapa_Estrategico.pdf" class="btn-voltar-moderno" style="display: inline-flex; width: auto; background: var(--primary-color); color: white; padding: 10px 25px; border-radius: 30px;">
+                        <span class="icon-circle-voltar" style="background: white; color: var(--primary-color);">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        </span>
+                        <span style="color: white; font-weight: bold; font-family: 'Montserrat', sans-serif;">Clique aqui para baixar o Mapa Estratégico</span>
+                    </a>
+                </div>
             </section>
 
-            <section id="cadeia-valor" class="section">
+            <section id="cadeia-valor" class="section glass-effect">
                 <h2>Cadeia de Valor</h2>
-                <p>A Cadeia de Valor detalha os principais processos e serviços, desde a gestão orçamentária até a comunicação social, ilustrando as interações entre os municípios, a sociedade e o Governo do Estado.</p>
-                <div class="hyperlink-container">
-                    <a href="pages/cadeia_de_valor.html" class="hyperlink-button">
-                        <span class="button-icon">🔗</span>
-                        Cadeia de Valor dos Consórcios Multifinalitários
+                <p>A Cadeia de Valor detalha os processos finalísticos e de suporte, e como eles se relacionam (Municípios, Sociedade e o Governo do Estado).</p>
+                
+                <div class="mvv-modern-grid" style="margin-top: 30px;">
+                    <div class="mvv-modern-card cv-main-trigger" style="border: 2px solid var(--primary-color); width: 800px; max-width: 100%;" tabindex="0" role="button" aria-label="Abrir componentes da Cadeia de Valor">
+                        <div class="mvv-card-body" style="padding: 0;">
+                            <img src="imagens/cadeia_valor.jpg" alt="Cadeia de Valor" style="width: 100%; height: auto; display: block; border-radius: 6px 6px 0 0; object-fit: contain;">
+                        </div>
+                        <div class="mvv-footer" style="background-color: var(--primary-color); font-size: 1.4rem; padding: 18px;">EXPLORAR CADEIA DE VALOR</div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="pdf/cadeia_valor.pdf" download="Cadeia_de_Valor.pdf" class="btn-voltar-moderno" style="display: inline-flex; width: auto; background: var(--primary-color); color: white; padding: 10px 25px; border-radius: 30px;">
+                        <span class="icon-circle-voltar" style="background: white; color: var(--primary-color);">
+                            <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="3" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        </span>
+                        <span style="color: white; font-weight: bold; font-family: 'Montserrat', sans-serif;">Clique aqui para baixar a Cadeia de Valor</span>
                     </a>
                 </div>
             </section>
 
-            <section id="indicadores" class="section">
-                <h2>Indicadores Estratégicos</h2>
-                <p>Os indicadores estratégicos permitem monitorar o progresso em direção aos objetivos estabelecidos no planejamento.</p>
-                <div class="hyperlink-container">
-                    <a href="pages/indicadores.html" class="hyperlink-button">
-                        <span class="button-icon">📊</span>
-                        Ver Indicadores Estratégicos
-                    </a>
+            <section id="indicadores" class="section glass-effect">
+                <h2>Indicadores</h2>
+                <p>Acesse os indicadores dos processos finalísticos e estratégicos para o planejamento estratégico.</p>
+                
+                <div class="cv-modern-grid mt-30" style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                    
+                    <div class="cv-modern-card ind-main-trigger" id="btn-indicadores-finalisticos" style="width: 300px; cursor: pointer; border-color: var(--primary-color);" tabindex="0" role="button">
+                        <svg class="cv-modern-icon" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                        <div class="cv-modern-title" style="font-size: 1.1rem; color: var(--primary-color);">PROCESSOS FINALÍSTICOS</div>
+                    </div>
+
+                    <div class="cv-modern-card ind-main-trigger" id="btn-indicadores-estrategicos" style="width: 300px; cursor: pointer; border-color: var(--primary-color);" tabindex="0" role="button">
+                        <svg class="cv-modern-icon" style="color: var(--primary-color);" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                        <div class="cv-modern-title" style="color: var(--primary-color); font-size: 1.1rem;">PROCESSOS ESTRATÉGICOS</div>
+                    </div>
+
                 </div>
             </section>
-		
-			<section id="iniciativas" class="section">
-				<h2>Iniciativas Estratégicas</h2>
-				<p>As iniciativas estratégicas são ações concretas para implementar o planejamento. Clique em uma das inciativas para ver mais detalhes.</p>
-				<div class="iniciativas-grid">
-					<div class="iniciativa-card" data-iniciativa="requalificacao">
-						<h3>Requalificação de Vias</h3>
-						<p>Melhoria da infraestrutura viária dos municípios consorciados.</p>
-					</div>
-					<div class="iniciativa-card" data-iniciativa="manutencao">
-						<h3>Manutenção de Vias</h3>
-						<p>Conservação contínua das vias urbanas e rurais.</p>
-					</div>
-					<div class="iniciativa-card" data-iniciativa="cadeias">
-						<h3>Fortalecimento de Cadeias Produtivas Rurais</h3>
-						<p>Apoio ao desenvolvimento do setor agropecuário.</p>
-					</div>
-					<div class="iniciativa-card" data-iniciativa="hidrica">
-						<h3>Ampliação da Oferta Hídrica</h3>
-						<p>Implantação de estruturas para garantir acesso à água.</p>
-					</div>
-				<div class="iniciativa-card" data-iniciativa="qualificacao">
-					<h3>Qualificação de Produtos</h3>
-					<p>Melhoria da qualidade de produtos de origem animal e vegetal.</p>
-				</div>
-				<div class="iniciativa-card" data-iniciativa="fundiaria">
-					<h3>Regularização Fundiária</h3>
-					<p>Suporte técnico para regularização de propriedades.</p>
-				</div>
-				<div class="iniciativa-card" data-iniciativa="ambiental">
-					<h3>Gestão Ambiental</h3>
-					<p>Suporte técnico à gestão ambiental municipal referente a consórcios públicos.</p>
-				</div>
-				<div class="iniciativa-card" data-iniciativa="infraestrutura">
-					<h3>Obras de Infraestrutura</h3>
-					<p>Execução de obras de infraestrutura urbana e edificações públicas.</p>
-				</div>
-				<div class="iniciativa-card" data-iniciativa="social">
-					<h3>Educação, Cultura, Esporte e Turismo</h3>
-					<p>Fortalecimento das políticas de educação, cultura, esporte e turismo.</p>
-				</div>
-				<div class="iniciativa-card" data-iniciativa="maquinas">
-					<h3>Máquinas e Equipamentos</h3>
-					<p>Disponibilização e gerenciamento compartilhado de máquinas e equipamentos.</p>
-				</div>
-				<div class="iniciativa-card" data-iniciativa="habitacao">
-					<h3>Obras de Habitação</h3>
-					<p>Execução consorciada de obras e programas habitacionais.</p>
-				</div>
-				<div class="iniciativa-card" data-iniciativa="residuos">
-					<h3>Resíduos Sólidos</h3>
-					<p>Implementação de sistemas integrados para a gestão de resíduos sólidos.</p>
-				</div>
-				<div class="iniciativa-card" data-iniciativa="planos">
-					<h3>Planos e Projetos</h3>
-					<p>Elaboração de estudos e projetos técnicos para o desenvolvimento territorial.</p>
-				</div>
-			</div>
-		</section>
-
+            
         </main>
 
-		<footer>
+        <footer class="glass-effect mt-30" id="rodape" tabindex="-1">
 			<div class="footer-content">
-				<img src="imagens/logo_governo.PNG" alt="Logo Governo do Estado da Bahia" class="footer-logo">
-				<p>&copy; 2025 Coordenação dos Consórcios Públicos do Estado da Bahia. Todos os direitos reservados.</p>
+
+				<div class="footer-logo-group">
+					<img src="imagens/logo-seplan.png"
+						alt="Logo da Secretaria de Planejamento do Estado da Bahia"
+						class="footer-logo">
+
+					<span class="footer-support">
+						Apoio técnico
+					</span>
+				</div>
+
+				<p>&copy; 2026 Coordenação dos Consórcios Públicos do Estado da Bahia. Todos os direitos reservados.</p>
+
 			</div>
-			<p class="footer-version">Versão: 1.0</p>
+
+			<p class="footer-version">Acessível - Em conformidade com o e-MAG</p>
 		</footer>
+		
     </div>
 
-    <!-- Modal para detalhes dos objetivos -->
-    <div id="objetivo-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3 id="modal-title"></h3>
-            <p id="modal-description"></p>
+    <div id="generic-modal" class="modal glass-modal-overlay" aria-modal="true" role="dialog">
+        <div class="modal-content glass-effect-strong">
+            <button class="close" aria-label="Fechar janela" title="Fechar">&times;</button>
+            <h3 id="modal-title" class="modal-title-custom"></h3>
+            <div id="modal-body" class="modal-body-custom"></div>
         </div>
     </div>
-
+    
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    
     <script src="js/script.js"></script>
 </body>
 </html>
-
